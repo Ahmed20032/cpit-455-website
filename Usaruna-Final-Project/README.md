@@ -1,23 +1,46 @@
-# Usaruna Final Project Checklist
+# Usaruna Final Project
 
-Use this folder for the final Usaruna Platform submission and the two-minute presentation.
+## Project Overview
+Usaruna Platform is an e-commerce marketplace for empowering family businesses in Saudi Arabia. The system connects productive families with customers through a secure, organized, and logistically integrated web platform.
 
-## Add Here Before Final Delivery
-- Usaruna project summary
-- Team information
-- GitHub repository link
-- Demo or deployment link
-- Architecture diagram
-- Testing or coverage proof
-- Risk or safety evidence
-- Best screenshot or best proof item for the show-and-tell
+## Problem Statement
+- Many family businesses currently depend on informal channels such as WhatsApp and Instagram.
+- This creates weak buyer trust, poor order management, limited product visibility, and insecure payment handling.
+- The project addresses these issues with a structured marketplace model for both direct customer use and broader producer support.
 
-## Suggested Final Files
-- `project-summary.md`
-- `architecture-diagram.png`
-- `testing-evidence.png`
-- `risk-analysis.md`
-- `show-and-tell-notes.md`
+## Target Users
+- Family producers who need a dependable digital sales channel
+- Customers looking for authentic local products
+- Platform administrators who manage the marketplace workflow
 
-## Presentation Tip
-Choose one Usaruna proof item that clearly shows engineering thinking, not only visual design. A strong example is usually a diagram, a testing result, a risk analysis, or a before/after improvement that is easy to explain in two minutes.
+## System Architecture
+- Frontend: React.js, Vite, and Tailwind CSS
+- Backend: Node.js and Express.js
+- Database and Auth: Supabase with PostgreSQL and Row Level Security
+- External services: Moyasar for payments, Supabase Storage for product images, and Google Maps API for delivery support
+
+## Dependability and Quality
+- Availability: designed for stable access during peak activity
+- Reliability: orders, payments, and product data should be processed correctly every time
+- Security: secure authentication, protected payment handling, and controlled data access
+- Resilience: supports recovery from payment errors, server issues, and service failures
+- Safety: helps prevent harmful or unsafe marketplace use
+- Scalability: supports growth in users, products, and transactions
+
+## Reused Components
+- React and Vite
+- Tailwind CSS
+- Supabase Auth
+- Supabase Storage
+- Moyasar API
+- Google Maps API
+
+## Portfolio Connection
+This final project connects directly to the weekly portfolio evidence:
+- Week 07-08: ALARP and fault-tree risk analysis
+- Week 09-10: security, resilience, and reuse thinking
+- Week 11-12: architecture and component separation
+- Week 13-14: verification and coverage mindset
+
+## Show-and-Tell Focus
+The strongest item to present is the way software engineering thinking was applied to dependability, architecture, and risk reduction for a real Saudi marketplace platform.

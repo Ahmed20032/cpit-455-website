@@ -6,7 +6,7 @@ Final integration, portfolio harvest, and show-and-tell preparation.
 ## Final V2 Submission
 - I prepared the portfolio as a final evidence index rather than a loose collection of weekly notes.
 - I selected a consistent structure that can support a two-minute review or presentation.
-- I added a final project folder so the portfolio can absorb real project proof before final submission.
+- I added a final project folder and linked it to the Usaruna Platform summary so the portfolio closes with one clear project reference.
 
 ## Final Harvest Checklist
 - All weekly folders exist
@@ -14,7 +14,7 @@ Final integration, portfolio harvest, and show-and-tell preparation.
 - Every weekly folder has a reflection file
 - Main page links to all weeks
 - Folder names are clear and professional
-- Final project folder is ready for project attachments
+- Final project folder is linked and named clearly for Usaruna
 
 ## Show-and-Tell Outline
 - Start with the portfolio structure

@@ -16,9 +16,9 @@ Distributed systems thinking, component-based engineering, and architecture desi
 - UI component: `Portfolio_AhmedAljohani.html`
 - Content component: weekly Markdown evidence files
 - Reflection component: weekly reflection files
-- Support component: project folder for final packaging
+- Support component: `Usaruna-Final-Project` for the final project summary and supporting material
 
 ## Architecture Benefit
 - One broken item does not force all other weekly content to change.
 - Navigation stays simple because the main page only indexes the evidence.
-- The same model can later scale to the final project documentation pack.
+- The same model also fits the final Usaruna project documentation pack.

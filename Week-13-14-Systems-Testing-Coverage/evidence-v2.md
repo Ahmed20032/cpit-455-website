@@ -13,7 +13,7 @@ Systems of systems, testing strategy, verification and validation, and coverage.
 - Confirm that every week has `evidence-v2.md`
 - Confirm that every week has `reflection.md`
 - Confirm that the folder names are descriptive
-- Confirm that the final project folder is reserved for final packaging
+- Confirm that the final project folder contains the Usaruna summary and supporting project reference
 
 ## Coverage Interpretation
 - Coverage for this portfolio means all required weeks are represented.
