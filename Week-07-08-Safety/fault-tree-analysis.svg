@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1320" viewBox="0 0 1400 1320">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef4ff"/>
+    </linearGradient>
+    <linearGradient id="eventGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10233f"/>
+      <stop offset="100%" stop-color="#244d83"/>
+    </linearGradient>
+    <linearGradient id="gateGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe4a9"/>
+      <stop offset="100%" stop-color="#ffbf59"/>
+    </linearGradient>
+    <linearGradient id="pillGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dbe8ff"/>
+      <stop offset="100%" stop-color="#edf4ff"/>
+    </linearGradient>
+    <pattern id="dotGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#d9e3f2"/>
+    </pattern>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#10233f" flood-opacity="0.10"/>
+    </filter>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#10233f" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="1320" fill="url(#bgGradient)"/>
+  <rect width="1400" height="1320" fill="url(#dotGrid)" opacity="0.32"/>
+  <circle cx="1260" cy="136" r="210" fill="#dff4ff" opacity="0.52"/>
+  <circle cx="170" cy="1120" r="188" fill="#f7ebff" opacity="0.42"/>
+  <circle cx="710" cy="1250" r="170" fill="#fff6de" opacity="0.46"/>
+
+  <rect x="42" y="34" width="1316" height="1252" rx="36" fill="#ffffff" stroke="#dce6f3" stroke-width="2"/>
+
+  <rect x="88" y="84" width="304" height="42" rx="21" fill="url(#pillGradient)"/>
+  <text x="240" y="112" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#2f6dff">WEEK 07-08 / FAULT TREE ANALYSIS</text>
+
+  <text x="88" y="182" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#12284a">Fault Tree Analysis</text>
+  <text x="88" y="236" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="800" fill="#12284a">(Deductive)</text>
+  <text x="88" y="292" font-family="Inter, Arial, sans-serif" font-size="24" fill="#5d6f8d">Start with the failure outcome, then trace the direct causes and</text>
+  <text x="88" y="326" font-family="Inter, Arial, sans-serif" font-size="24" fill="#5d6f8d">show one branch that needs combined conditions through an AND gate.</text>
+
+  <rect x="968" y="100" width="332" height="176" rx="28" fill="#f8fbff" stroke="#dce6f3" stroke-width="2" filter="url(#softShadow)"/>
+  <rect x="968" y="100" width="332" height="16" rx="8" fill="#dfe9ff"/>
+  <circle cx="1012" cy="158" r="15" fill="#10233f"/>
+  <path d="M1005 158 L1010 162 L1019 153" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1040" y="164" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#2f6dff">DEDUCTIVE LOGIC</text>
+  <text x="1010" y="202" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#12284a">Top event first.</text>
+  <text x="1010" y="234" font-family="Inter, Arial, sans-serif" font-size="14" fill="#5d6f8d">The OR gate shows direct failure paths.</text>
+  <text x="1010" y="262" font-family="Inter, Arial, sans-serif" font-size="14" fill="#5d6f8d">The AND gate explains one combined cause.</text>
+
+  <line x1="88" y1="372" x2="1268" y2="372" stroke="#dce6f3" stroke-width="2"/>
+
+  <rect x="466" y="420" width="468" height="132" rx="30" fill="url(#eventGradient)" filter="url(#shadow)"/>
+  <text x="700" y="482" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="800" fill="#dbe7fb">TOP FAILURE EVENT</text>
+  <text x="700" y="526" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="800" fill="#ffffff">Portfolio Review Fails</text>
+
+  <line x1="700" y1="552" x2="700" y2="622" stroke="#a8b6ca" stroke-width="8" stroke-linecap="round"/>
+
+  <path d="M648 678 L648 626 Q648 584 700 574 Q752 584 752 626 L752 678 Q726 664 700 664 Q674 664 648 678 Z" fill="url(#gateGradient)" stroke="#d09234" stroke-width="3" filter="url(#softShadow)"/>
+  <text x="700" y="636" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#9c5f04">OR</text>
+
+  <rect x="864" y="586" width="326" height="100" rx="24" fill="#fff6e8" stroke="#f0cb89" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="892" y="620" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#b7791f">OR GATE</text>
+  <text x="892" y="650" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#12284a">Any one direct cause below can</text>
+  <text x="892" y="676" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#12284a">trigger the top review failure.</text>
+
+  <line x1="700" y1="678" x2="700" y2="724" stroke="#a8b6ca" stroke-width="8" stroke-linecap="round"/>
+  <line x1="180" y1="724" x2="1220" y2="724" stroke="#a8b6ca" stroke-width="8" stroke-linecap="round"/>
+
+  <line x1="180" y1="724" x2="180" y2="770" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="440" y1="724" x2="440" y2="770" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="700" y1="724" x2="700" y2="770" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="960" y1="724" x2="960" y2="770" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="1220" y1="724" x2="1220" y2="770" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+
+  <rect x="65" y="770" width="230" height="214" rx="26" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="65" y="770" width="230" height="54" rx="26" fill="#fff0f3"/>
+  <circle cx="112" cy="797" r="16" fill="#ef647d"/>
+  <text x="112" y="803" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff">1</text>
+  <text x="138" y="804" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#ef647d">CAUSE 01</text>
+  <text x="180" y="858" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Required Evidence</text>
+  <text x="180" y="888" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Missing</text>
+  <text x="180" y="936" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">A required proof file is absent</text>
+  <text x="180" y="958" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">when the reviewer opens the week.</text>
+
+  <rect x="325" y="770" width="230" height="214" rx="26" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="325" y="770" width="230" height="54" rx="26" fill="#edf4ff"/>
+  <circle cx="372" cy="797" r="16" fill="#2f6dff"/>
+  <text x="372" y="803" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff">2</text>
+  <text x="398" y="804" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#2f6dff">CAUSE 02</text>
+  <text x="440" y="858" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="800" fill="#12284a">Reflection Missing</text>
+  <text x="440" y="936" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">The weekly task exists, but there is</text>
+  <text x="440" y="958" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">no reflection file for the reviewer.</text>
+
+  <rect x="585" y="770" width="230" height="214" rx="26" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="585" y="770" width="230" height="54" rx="26" fill="#eefbf4"/>
+  <circle cx="632" cy="797" r="16" fill="#2bb673"/>
+  <text x="632" y="803" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff">3</text>
+  <text x="658" y="804" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#2bb673">CAUSE 03</text>
+  <text x="700" y="846" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#12284a">Reviewer Cannot</text>
+  <text x="700" y="876" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800" fill="#12284a">Verify the Proof</text>
+  <text x="700" y="932" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">This branch is explained below</text>
+  <text x="700" y="954" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">with an AND gate.</text>
+
+  <rect x="845" y="770" width="230" height="214" rx="26" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="845" y="770" width="230" height="54" rx="26" fill="#fff6e5"/>
+  <circle cx="892" cy="797" r="16" fill="#f59e0b"/>
+  <text x="892" y="803" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff">4</text>
+  <text x="918" y="804" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#f59e0b">CAUSE 04</text>
+  <text x="960" y="858" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Wrong Link Target</text>
+  <text x="960" y="936" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">The page link opens the wrong file</text>
+  <text x="960" y="958" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">or the wrong portfolio section.</text>
+
+  <rect x="1105" y="770" width="230" height="214" rx="26" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="1105" y="770" width="230" height="54" rx="26" fill="#ecfbff"/>
+  <circle cx="1152" cy="797" r="16" fill="#06b6d4"/>
+  <text x="1152" y="803" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800" fill="#ffffff">5</text>
+  <text x="1178" y="804" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#06b6d4">CAUSE 05</text>
+  <text x="1220" y="858" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Final Project Proof</text>
+  <text x="1220" y="888" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Absent</text>
+  <text x="1220" y="936" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">The final supporting artifact is not</text>
+  <text x="1220" y="958" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="13" fill="#5d6f8d">attached before submission review.</text>
+
+  <line x1="700" y1="984" x2="700" y2="1024" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+
+  <path d="M646 1110 L646 1060 Q646 1018 700 1018 Q754 1018 754 1060 L754 1110 Z" fill="url(#gateGradient)" stroke="#d09234" stroke-width="3" filter="url(#softShadow)"/>
+  <text x="700" y="1076" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800" fill="#9c5f04">AND</text>
+
+  <rect x="830" y="1014" width="400" height="110" rx="22" fill="#f2fbf6" stroke="#bfe5cb" stroke-width="2" filter="url(#softShadow)"/>
+  <text x="858" y="1048" font-family="Inter, Arial, sans-serif" font-size="16" font-weight="800" fill="#199c59">AND GATE</text>
+  <text x="858" y="1080" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#12284a">The reviewer cannot verify proof</text>
+  <text x="858" y="1104" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" fill="#12284a">when both issues happen together.</text>
+
+  <line x1="700" y1="1110" x2="700" y2="1148" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="560" y1="1148" x2="840" y2="1148" stroke="#a8b6ca" stroke-width="6" stroke-linecap="round"/>
+  <line x1="560" y1="1148" x2="560" y2="1180" stroke="#a8b6ca" stroke-width="5" stroke-linecap="round"/>
+  <line x1="840" y1="1148" x2="840" y2="1180" stroke="#a8b6ca" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="420" y="1180" width="280" height="94" rx="22" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="420" y="1180" width="280" height="44" rx="22" fill="#fff6e5"/>
+  <text x="560" y="1208" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#f59e0b">SUBCAUSE A</text>
+  <text x="560" y="1250" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">Unclear File Naming</text>
+
+  <rect x="700" y="1180" width="280" height="94" rx="22" fill="#ffffff" stroke="#d8e3f1" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="700" y="1180" width="280" height="44" rx="22" fill="#ecfbff"/>
+  <text x="840" y="1208" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" fill="#06b6d4">SUBCAUSE B</text>
+  <text x="840" y="1250" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800" fill="#12284a">No Evidence Label</text>
+</svg>

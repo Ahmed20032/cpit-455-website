@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Aljohani CV</title>
+    <style>
+        :root{
+            --bg:#f4f7fb;
+            --card:#ffffff;
+            --text:#10233f;
+            --muted:#5f6f89;
+            --line:#dbe4ef;
+            --accent:#2f6dff;
+        }
+        *{box-sizing:border-box}
+        body{
+            margin:0;
+            font-family: Inter, Arial, sans-serif;
+            background:var(--bg);
+            color:var(--text);
+        }
+        .page{
+            width:min(920px, 92%);
+            margin:32px auto;
+            background:var(--card);
+            border:1px solid var(--line);
+            border-radius:24px;
+            padding:40px;
+            box-shadow:0 18px 40px rgba(16,35,63,.08);
+        }
+        h1{
+            margin:0 0 8px;
+            font-size:42px;
+            line-height:1.05;
+        }
+        .lead{
+            color:var(--muted);
+            font-size:18px;
+            margin:0 0 18px;
+        }
+        .links{
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+            margin:18px 0 28px;
+        }
+        .pill{
+            padding:10px 14px;
+            border-radius:999px;
+            border:1px solid var(--line);
+            color:var(--text);
+            text-decoration:none;
+            background:#f8fbff;
+            font-weight:600;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:20px;
+        }
+        @media (max-width: 760px){
+            .page{padding:24px}
+            .grid{grid-template-columns:1fr}
+        }
+        section{
+            border-top:1px solid var(--line);
+            padding-top:18px;
+        }
+        h2{
+            margin:0 0 10px;
+            font-size:20px;
+            color:var(--accent);
+        }
+        p{
+            margin:0 0 10px;
+            color:var(--muted);
+            line-height:1.7;
+        }
+        ul{
+            margin:0;
+            padding-left:18px;
+            color:var(--muted);
+            line-height:1.8;
+        }
+        strong{color:var(--text)}
+    </style>
+</head>
+<body>
+<main class="page">
+    <h1>Ahmed Aljohani</h1>
+    <p class="lead">Cybersecurity-focused IT student building clear, review-ready engineering portfolios and practical software artifacts.</p>
+
+    <div class="links">
+        <a class="pill" href="Portfolio_AhmedAljohani.html">Portfolio</a>
+        <a class="pill" href="https://www.linkedin.com/in/ahmed-aljohani-97b1bb263/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="pill" href="https://github.com/Ahmed20032?tab=repositories" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+
+    <div class="grid">
+        <section>
+            <h2>Profile</h2>
+            <p>An IT student at King Abdulaziz University with strong interest in cybersecurity, technical organization, and dependable software delivery. I enjoy turning course work into structured, reviewable evidence with clean documentation and practical engineering thinking.</p>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <p><strong>King Abdulaziz University</strong></p>
+            <p>Information Technology student with focus on cybersecurity-related skills and hands-on portfolio development.</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML, CSS, JavaScript, Markdown</li>
+                <li>Git and GitHub workflow</li>
+                <li>Portfolio structuring and evidence organization</li>
+                <li>Testing, review, and submission readiness</li>
+                <li>Cybersecurity learning in network security and vulnerability awareness</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Tools</h2>
+            <ul>
+                <li>WebStorm</li>
+                <li>GitHub</li>
+                <li>Markdown-based documentation</li>
+                <li>Diagram-driven portfolio presentation</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <p><strong>CPIT455 HIMMA Portfolio</strong></p>
+            <p>Built a structured weekly course portfolio with evidence files, reflections, diagrams, testing notes, architecture thinking, and final project preparation.</p>
+        </section>
+
+        <section>
+            <h2>Contact Links</h2>
+            <ul>
+                <li>LinkedIn: linkedin.com/in/ahmed-aljohani-97b1bb263</li>
+                <li>GitHub: github.com/Ahmed20032</li>
+            </ul>
+        </section>
+    </div>
+</main>
+</body>
+</html>

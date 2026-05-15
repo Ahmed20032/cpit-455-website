@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portfolio • Ahmed Aljohani</title>
+    <meta name="description" content="CPIT455 HIMMA Portfolio for Ahmed Aljohani."/>
+
+    <style>
+        :root{
+            --bg: #0b0f19;
+            --panel: rgba(255,255,255,.06);
+            --panel2: rgba(255,255,255,.10);
+            --text: rgba(255,255,255,.88);
+            --muted: rgba(255,255,255,.62);
+            --border: rgba(255,255,255,.12);
+            --shadow: 0 10px 30px rgba(0,0,0,.35);
+            --radius: 18px;
+            --accent: #7c5cff;
+            --accent2: #00d4ff;
+            --ok: #2ee59d;
+            --warn: #ffcc66;
+        }
+
+        [data-theme="light"]{
+            --bg: #f7f8fc;
+            --panel: rgba(0,0,0,.05);
+            --panel2: rgba(0,0,0,.08);
+            --text: rgba(0,0,0,.86);
+            --muted: rgba(0,0,0,.60);
+            --border: rgba(0,0,0,.10);
+            --shadow: 0 10px 30px rgba(0,0,0,.10);
+            --accent: #5b3bff;
+            --accent2: #008cff;
+        }
+
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{
+            margin:0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            background: radial-gradient(1200px 600px at 15% 10%, rgba(124,92,255,.22), transparent 60%),
+            radial-gradient(1200px 600px at 85% 20%, rgba(0,212,255,.16), transparent 55%),
+            linear-gradient(180deg, var(--bg), var(--bg));
+            color: var(--text);
+        }
+
+        a{color:inherit; text-decoration:none}
+        .container{width:min(1120px, 92%); margin:0 auto}
+
+        .nav{
+            position: sticky; top:0; z-index:50;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(180deg, rgba(10,12,18,.75), rgba(10,12,18,.25));
+            border-bottom: 1px solid var(--border);
+        }
+        [data-theme="light"] .nav{
+            background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.35));
+        }
+        .nav-inner{
+            display:flex; align-items:center; justify-content:space-between;
+            padding: 14px 0;
+            gap: 12px;
+        }
+        .brand{
+            display:flex; align-items:center; gap:10px;
+            font-weight:800; letter-spacing:.3px;
+        }
+        .logo{
+            width:38px; height:38px;
+            border-radius:12px;
+            object-fit: cover;
+            border: 1px solid rgba(255,255,255,.18);
+            box-shadow: var(--shadow);
+        }
+        .logo{
+            width:38px; height:38px; border-radius:12px;
+            background:
+                    radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.35), transparent 60%),
+                    linear-gradient(135deg, var(--accent), var(--accent2));
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,.18);
+        }
+        .zoomable-image{
+            cursor: zoom-in;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .zoomable-image:hover{
+            transform: scale(1.05);
+        }
+        .links{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+        .pill{
+            padding:10px 12px;
+            border-radius: 999px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            color: var(--muted);
+            transition:.2s;
+            font-size: 13px;
+        }
+        .pill:hover{transform: translateY(-1px); background: var(--panel2); color: var(--text)}
+        .btn{
+            padding:10px 12px;
+            border-radius: 12px;
+            border:1px solid rgba(255,255,255,.18);
+            background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(0,212,255,.18));
+            box-shadow: var(--shadow);
+            cursor:pointer;
+            color: var(--text);
+            font-weight: 650;
+            font-size: 13px;
+            transition:.2s;
+            display:flex; align-items:center; gap:8px;
+            user-select:none;
+        }
+        .btn:hover{transform: translateY(-1px)}
+        .btn:active{transform: translateY(0px)}
+
+        .hero{padding: 42px 0 18px}
+        .hero-grid{
+            display:grid; grid-template-columns: 1.2fr .8fr; gap: 18px;
+        }
+        @media (max-width: 920px){
+            .hero-grid{grid-template-columns:1fr}
+        }
+        .card{
+            border:1px solid var(--border);
+            background: var(--panel);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow:hidden;
+        }
+        .hero-card{padding: 22px}
+        .kicker{
+            display:inline-flex; align-items:center; gap:10px;
+            padding:8px 12px;
+            border-radius:999px;
+            background: rgba(124,92,255,.12);
+            border:1px solid rgba(124,92,255,.25);
+            color: var(--text);
+            font-size: 13px;
+        }
+        .kdot{width:8px;height:8px;border-radius:50%; background: linear-gradient(135deg, var(--accent), var(--accent2))}
+        h1{
+            margin: 14px 0 8px;
+            font-size: clamp(28px, 3.2vw, 44px);
+            line-height: 1.08;
+            letter-spacing:-.6px;
+        }
+        .subtitle{color: var(--muted); margin: 0 0 14px; font-size: 14.5px; line-height:1.6}
+        .hero-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top: 14px}
+        .cta{
+            padding: 11px 14px; border-radius: 14px;
+            border:1px solid rgba(255,255,255,.18);
+            background: linear-gradient(135deg, rgba(124,92,255,.35), rgba(0,212,255,.22));
+            font-weight:700;
+            display:inline-flex; gap:10px; align-items:center;
+        }
+        .ghost{
+            padding: 11px 14px; border-radius: 14px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            color: var(--muted);
+            font-weight:650;
+        }
+        .grid-mini{display:grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px}
+        .mini{
+            padding: 14px;
+            border-radius: 16px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.04);
+        }
+        .mini b{display:block; margin-bottom:6px}
+        .mini span{color: var(--muted); font-size: 13px; line-height:1.5}
+
+        section{padding: 18px 0}
+        .section-title{
+            display:flex; align-items:end; justify-content:space-between;
+            gap: 12px; margin: 8px 0 12px;
+        }
+        .section-title h2{margin:0; font-size: 18px; letter-spacing:-.2px}
+        .section-title p{margin:0; color: var(--muted); font-size: 13px}
+
+        .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px}
+        @media (max-width: 980px){ .grid-3{grid-template-columns:1fr} }
+
+        .item{padding: 16px}
+        .tag{
+            display:inline-flex; align-items:center; gap:8px;
+            padding:8px 10px; border-radius:999px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.03);
+            color: var(--muted);
+            font-size: 12px;
+        }
+        .dot{width:7px;height:7px;border-radius:50%; background: var(--ok)}
+        .muted{color: var(--muted)}
+        .list{margin:10px 0 0; padding:0; list-style:none}
+        .list li{
+            padding:10px 0;
+            border-bottom: 1px dashed var(--border);
+            color: var(--muted);
+            display:flex; gap:10px;
+        }
+        .list li:last-child{border-bottom:none}
+        .bullet{
+            width:18px; height:18px; border-radius:8px;
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            display:flex; align-items:center; justify-content:center;
+            flex:0 0 auto;
+            margin-top: 1px;
+        }
+
+        .tools{
+            display:flex; gap:10px; flex-wrap:wrap;
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .search{
+            flex: 1 1 260px;
+            padding: 11px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            color: var(--text);
+            outline: none;
+        }
+        .select{
+            flex: 0 1 240px;
+            padding: 11px 12px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            color: var(--text);
+            outline:none;
+        }
+        .evidence-wrap{padding: 14px}
+        details{
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            border-radius: 16px;
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            overflow:hidden;
+        }
+        summary{
+            cursor:pointer;
+            display:flex; align-items:center; justify-content:space-between;
+            gap: 10px;
+            list-style:none;
+            font-weight: 750;
+            padding: 4px 0;
+        }
+        summary::-webkit-details-marker{display:none}
+        .week-badge{
+            font-size:12px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(124,92,255,.28);
+            background: rgba(124,92,255,.12);
+            color: var(--text);
+            font-weight: 700;
+            white-space:nowrap;
+        }
+        .ev-body{padding: 10px 0 2px; color: var(--muted); line-height:1.7; font-size: 13.5px}
+        .ev-grid{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        @media (max-width: 860px){ .ev-grid{grid-template-columns:1fr} }
+        .box{
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.03);
+            border-radius: 14px;
+            padding: 12px;
+        }
+        .box b{display:block; margin-bottom:6px; color: var(--text)}
+        .box code{
+            display:inline-block;
+            padding: 2px 6px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.04);
+            color: var(--text);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 12px;
+        }
+        .diagram{
+            border:1px solid var(--border);
+            background: rgba(255,255,255,.03);
+            border-radius: 14px;
+            padding: 12px;
+            margin-top: 10px;
+        }
+        .diagram b{display:block; margin-bottom:8px; color: var(--text)}
+        .diagram-gallery{
+            display:grid;
+            gap:14px;
+        }
+        .diagram-figure{
+            margin:0;
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+        }
+        .diagram-image{
+            display:block;
+            width:100%;
+            max-width:860px;
+            height:auto;
+            margin:0 auto;
+            border-radius:14px;
+            border:1px solid rgba(255,255,255,.12);
+            background:#ffffff;
+            box-shadow: var(--shadow);
+        }
+        .diagram-caption{
+            margin:0 auto;
+            width:100%;
+            max-width:860px;
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.55;
+            text-align:left;
+        }
+        .diagram-flow{
+            display:flex;
+            flex-wrap:wrap;
+            align-items:center;
+            gap:8px;
+        }
+        .df-node{
+            padding:8px 10px;
+            border-radius:12px;
+            border:1px solid rgba(124,92,255,.28);
+            background: rgba(124,92,255,.12);
+            color: var(--text);
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        .df-arrow{
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1;
+        }
+
+        .lightbox{
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            background: rgba(5,8,14,.82);
+            backdrop-filter: blur(8px);
+            z-index: 120;
+        }
+        .lightbox.open{display:flex}
+        .lightbox-dialog{
+            position: relative;
+            width: min(88vw, 640px);
+            padding: 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,.14);
+            background: rgba(13,17,28,.92);
+            box-shadow: 0 24px 80px rgba(0,0,0,.45);
+        }
+        .lightbox img{
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 78vh;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+        .lightbox-close{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 36px;
+            height: 36px;
+            border: 1px solid rgba(255,255,255,.16);
+            border-radius: 10px;
+            background: rgba(255,255,255,.08);
+            color: var(--text);
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+        }
+        .lightbox-caption{
+            margin-top: 10px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        footer{padding: 26px 0 40px; color: var(--muted)}
+        .foot{
+            display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+            border-top: 1px solid var(--border);
+            padding-top: 14px;
+        }
+        .small{font-size: 12.5px}
+    </style>
+</head>
+
+<body>
+<div class="nav">
+    <div class="container nav-inner">
+        <div class="brand">
+            <img class="logo zoomable-image" src="_DSC3741.jpg" alt="Ahmed Aljohani" data-zoomable />
+            <div>
+                <div style="font-size:14px; font-weight:850;">Ahmed Aljohani</div>
+                <div style="font-size:12px; color:var(--muted); margin-top:2px;">CPIT455 • HIMMA Portfolio</div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a class="pill" href="#about">About</a>
+            <a class="pill" href="#skills">Skills</a>
+            <a class="pill" href="#project">Project</a>
+            <a class="pill" href="#evidence">Weekly Evidence</a>
+            <a class="pill" href="#links">Links</a>
+            <button class="btn" id="themeBtn" type="button" title="Toggle theme">
+                <span>Theme</span>
+                <span style="opacity:.8">🌓</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+<header class="hero">
+    <div class="container hero-grid">
+        <div class="card hero-card">
+            <div class="kicker"><span class="kdot"></span><span>BUILD YOUR PROOF • Portfolio that looks like a product</span></div>
+
+            <h1>Cybersecurity-focused IT Student<br/>
+                <span style="background:linear-gradient(135deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; color:transparent;">
+            Organized Weekly Evidence • Reflection • Final Proof
+          </span>
+            </h1>
+
+            <p class="subtitle">
+                <b>Goal:</b> show weekly engineering progress in a clean submission structure with
+                <span class="muted">V2 evidence, reflection files, reliability thinking, safety notes, testing mindset, and final project readiness through the Usaruna Platform case study.</span>
+            </p>
+
+            <div class="hero-actions">
+                <a class="cta" href="#evidence">Weekly Evidence →</a>
+                <a class="ghost" href="Usaruna-Final-Project/README.md">Usaruna Final Project</a>
+                <a class="ghost" href="Week-15-16-Final-Harvest/evidence-v2.md">Final Harvest</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="grid-mini">
+                <div class="mini">
+                    <b>Student</b>
+                    <span>Ahmed Aljohani • ID: 2243855</span>
+                </div>
+                <div class="mini">
+                    <b>Submission Status</b>
+                    <span>Week folders prepared • V2 evidence added • reflection files linked</span>
+                </div>
+                <div class="mini">
+                    <b>Section</b>
+                    <span>CPIT455 IT1 • Portfolio organized for weekly review</span>
+                </div>
+                <div class="mini">
+                    <b>Tools</b>
+                    <span>WebStorm • Git/GitHub • HTML/CSS/JS • Markdown</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section id="about">
+        <div class="section-title">
+            <div>
+                <h2>About</h2>
+                <p>Short + professional (no personal sensitive info)</p>
+            </div>
+        </div>
+
+        <div class="card item">
+            <div class="tag"><span class="dot"></span><span>Professional Summary</span></div>
+            <p class="muted" style="margin:10px 0 0; line-height:1.7">
+                A motivated IT student at King Abdulaziz University specializing in cybersecurity. I enjoy hands-on technical work in network security, vulnerability assessment, and threat detection. In this portfolio I focus on building clear weekly proof through V2 evidence files, reflection, measurable review quality, and practical software engineering thinking.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-title">
+            <div>
+                <h2>Skills</h2>
+                <p>Keep it aligned with CPIT455 + your actual work</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Frontend</span></div>
+                <ul class="list">
+                    <li><span class="bullet">✓</span><span>HTML5 semantics • responsive layout • accessibility basics</span></li>
+                    <li><span class="bullet">✓</span><span>CSS: Flex/Grid • variables • components • UI polish</span></li>
+                    <li><span class="bullet">✓</span><span>JavaScript: DOM • events • filtering/search</span></li>
+                </ul>
+            </div>
+
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Engineering Focus</span></div>
+                <ul class="list">
+                    <li><span class="bullet">⚙</span><span>Dependability: availability, reliability, safety, security, resilience</span></li>
+                    <li><span class="bullet">⚙</span><span>Architecture: components + separation (UI / weekly files / assets)</span></li>
+                    <li><span class="bullet">⚙</span><span>Testing mindset: coverage, evidence, checks before final upload</span></li>
+                </ul>
+            </div>
+
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Collaboration</span></div>
+                <ul class="list">
+                    <li><span class="bullet">🤝</span><span>GitHub workflow: branches • PRs • commit messages</span></li>
+                    <li><span class="bullet">🤝</span><span>Documentation: README • weekly evidence • reflection • checklists</span></li>
+                    <li><span class="bullet">🤝</span><span>Demo readiness: stable structure + clear reviewer journey</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="section-title">
+            <div>
+                <h2>Group Project</h2>
+                <p>Real project summary based on our software engineering submission</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Domain</span></div>
+                <p class="muted" style="margin:10px 0 0; line-height:1.7">
+                    <b style="color:var(--text)">Usaruna Platform</b><br/>
+                    An e-commerce marketplace for empowering family businesses in Saudi Arabia by connecting productive families with customers through a secure, organized, and logistically integrated web platform.
+                </p>
+            </div>
+
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Quality Attributes</span></div>
+                <ul class="list">
+                    <li><span class="bullet">A</span><span><b style="color:var(--text)">Availability:</b> designed for high uptime during peak ordering periods</span></li>
+                    <li><span class="bullet">R</span><span><b style="color:var(--text)">Reliability:</b> orders, payments, and product data should be processed correctly every time</span></li>
+                    <li><span class="bullet">S</span><span><b style="color:var(--text)">Security:</b> secure authentication, encrypted data handling, and protected payments</span></li>
+                </ul>
+            </div>
+
+            <div class="card item">
+                <div class="tag"><span class="dot"></span><span>Engineering Evidence</span></div>
+                <ul class="list">
+                    <li><span class="bullet">🏗</span><span><b style="color:var(--text)">Architecture:</b> React + Vite frontend, Node + Express backend, and Supabase as the database/auth layer</span></li>
+                    <li><span class="bullet">♻</span><span><b style="color:var(--text)">Reused Components:</b> Tailwind CSS, Supabase Auth, Supabase Storage, Moyasar API, and Google Maps API</span></li>
+                    <li><span class="bullet">⚠</span><span><b style="color:var(--text)">Risk Thinking:</b> ALARP and fault-tree analysis used to improve trust, delivery, and failure handling</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card item" style="margin-top:12px">
+            <div class="tag"><span class="dot"></span><span>Architecture & Project Notes</span></div>
+            <div class="ev-grid" style="margin-top:10px">
+                <div class="box">
+                    <b>System Overview</b>
+                    <div class="muted">Usaruna addresses weak buyer trust, poor order management, low product visibility, and insecure payment handling for family businesses.</div>
+                    <div style="margin-top:8px"><a href="Usaruna-Final-Project/README.md"><code>Usaruna-Final-Project/README.md</code></a></div>
+                </div>
+                <div class="box">
+                    <b>Dependability & Risk</b>
+                    <div class="muted">The project emphasizes availability, reliability, security, resilience, safety, and scalability, supported by ALARP and fault-tree notes.</div>
+                    <div style="margin-top:8px"><a href="Week-07-08-Safety/evidence-v2.md"><code>Week-07-08-Safety/evidence-v2.md</code></a></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="evidence">
+        <div class="section-title">
+            <div>
+                <h2>Weekly Evidence</h2>
+                <p>Blocks are Weeks + Class/Phase, now linked to real V2 files</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="tools">
+                <input class="search" id="searchInput" placeholder="Search evidence (e.g., ALARP, reliability, coverage, Git)..." />
+                <select class="select" id="weekSelect">
+                    <option value="all">All Blocks</option>
+                    <option value="1-2">Week 01–02 • Class 00</option>
+                    <option value="3-4">Week 03–04 • Class 01</option>
+                    <option value="5-6">Week 05–06 • Class 02</option>
+                    <option value="7-8">Week 07–08 • Class 03</option>
+                    <option value="9-10">Week 09–10 • Group Phase</option>
+                    <option value="11-12">Week 11–12 • Group Phase</option>
+                    <option value="13-14">Week 13–14 • Group Phase</option>
+                    <option value="15-16">Week 15–16 • Final Harvest</option>
+                </select>
+            </div>
+
+            <div class="evidence-wrap" id="evidenceList">
+                <details data-week="1-2" data-tags="himma evidence portfolio iteration h-stack week 01 02">
+                    <summary>
+                        <span>Week 01–02 — CLASS 00 · The HIMMA System</span>
+                        <span class="week-badge">Week 01–02</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Evidence, Portfolio, Iteration, H-Stack Mindset</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-01-02-HIMMA-System/diagram.svg" alt="HIMMA-inspired portfolio workflow diagram" />
+                                    <figcaption class="diagram-caption">A clean HIMMA-style workflow: draft, feedback, final evidence, and reflection feeding one organized weekly folder.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Converted the portfolio into a real weekly submission system with a root folder, week folders, V2 evidence files, and reflection files.</div>
+                                <div style="margin-top:8px"><a href="Week-01-02-HIMMA-System/evidence-v2.md"><code>Week-01-02-HIMMA-System/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-01-02-HIMMA-System/reflection.md"><code>Week-01-02-HIMMA-System/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div class="muted">Source class file</div>
+                                <div style="margin-top:8px"><a href="../Class0 .pdf"><code>../Class0 .pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Portfolio organization as proof system</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="3-4" data-tags="dependability availability reliability safety security resilience sources failure week 03 04">
+                    <summary>
+                        <span>Week 03–04 — CLASS 01 · Domain Spine: Dependability</span>
+                        <span class="week-badge">Week 03–04</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> 5 Attributes (Availability, Reliability, Safety, Security, Resilience), Sources of Failure</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-03-04-Dependability/diagram.svg" alt="Dependability attributes concept diagram" />
+                                    <figcaption class="diagram-caption">The portfolio is treated like a dependable system with availability, reliability, safety, security, and resilience around one core structure.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Mapped the five dependability attributes to the portfolio itself and documented broken links, missing files, and vague naming as failure sources.</div>
+                                <div style="margin-top:8px"><a href="Week-03-04-Dependability/evidence-v2.md"><code>Week-03-04-Dependability/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-03-04-Dependability/reflection.md"><code>Week-03-04-Dependability/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div style="margin-top:8px"><a href="../Class1 .pdf"><code>../Class1 .pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Dependability applied to review access and file structure</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="5-6" data-tags="reliability fault error failure pofod rocof avail metrics week 05 06">
+                    <summary>
+                        <span>Week 05–06 — CLASS 02 · Reliability Engineering</span>
+                        <span class="week-badge">Week 05–06</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Fault → Error → Failure, POFOD, ROCOF, AVAIL Metrics, 8 Commandments</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-05-06-Reliability/diagram.svg" alt="Fault error failure and metrics concept diagram" />
+                                    <figcaption class="diagram-caption">A portfolio-focused reliability model showing how a small fault becomes an error, then turns into a real submission failure, with metrics under it.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Used the fault-error-failure chain to explain how naming mistakes or missing files become real submission failures.</div>
+                                <div style="margin-top:8px"><a href="Week-05-06-Reliability/evidence-v2.md"><code>Week-05-06-Reliability/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-05-06-Reliability/reflection.md"><code>Week-05-06-Reliability/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div style="margin-top:8px"><a href="../Class2 .pdf"><code>../Class2 .pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Reliability rules for repeatable weekly delivery</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="7-8" data-tags="safety alarp fault tree safety case hazard accident damage week 07 08">
+                    <summary>
+                        <span>Week 07–08 — CLASS 03 · Safety Engineering</span>
+                        <span class="week-badge">Week 07–08</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Hazard → Accident → Damage, ALARP Triangle, Fault Tree Analysis, Safety Case</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-07-08-Safety/diagram.svg" alt="ALARP concept diagram for portfolio risk" />
+                                    <figcaption class="diagram-caption">A custom ALARP-style risk triangle for submission quality, showing what is unacceptable, what needs reduction, and what is acceptable.</figcaption>
+                                </figure>
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-07-08-Safety/fault-tree-analysis.svg" alt="Fault tree analysis diagram for portfolio review failure" />
+                                    <figcaption class="diagram-caption">A deductive fault tree that starts from one top failure event and breaks it down into the causes that could make review fail.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Defined the main submission hazard, built a text fault tree, and listed ALARP-style controls for avoiding review failure.</div>
+                                <div style="margin-top:8px"><a href="Week-07-08-Safety/evidence-v2.md"><code>Week-07-08-Safety/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-07-08-Safety/reflection.md"><code>Week-07-08-Safety/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div style="margin-top:8px"><a href="../class3 .pdf"><code>../class3 .pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>ALARP controls for portfolio submission risk</code></div>
+                            </div>
+                        </div>
+
+                        <div class="box" style="margin-top:10px">
+                            <b>Homework (10%) — Due Week 07</b>
+                            <div class="muted">Current safety homework content is folded into the same V2 evidence and reflection structure for this block.</div>
+                            <div style="margin-top:8px"><a href="Week-07-08-Safety/evidence-v2.md"><code>Week-07-08-Safety/evidence-v2.md</code></a></div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="9-10" data-tags="security resilience reuse component composition group phase week 09 10">
+                    <summary>
+                        <span>Week 09–10 — GROUP PHASE · Security & Resilience + Software Reuse</span>
+                        <span class="week-badge">Week 09–10</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Security Engineering, Resilience Patterns, Software Reuse, Component Composition</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-09-10-Security-Resilience-Reuse/diagram.svg" alt="Security resilience and reuse concept diagram" />
+                                    <figcaption class="diagram-caption">Three connected ideas in one clean structure: protect the page, keep changes stable, and reuse the same weekly pattern.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Explained privacy-aware page content, resilient weekly organization, and reuse of one week-template structure across the portfolio.</div>
+                                <div style="margin-top:8px"><a href="Week-09-10-Security-Resilience-Reuse/evidence-v2.md"><code>Week-09-10-Security-Resilience-Reuse/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-09-10-Security-Resilience-Reuse/reflection.md"><code>Week-09-10-Security-Resilience-Reuse/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div class="muted">Source class files</div>
+                                <div style="margin-top:8px"><a href="../CPIT455-class7-NooR.pdf"><code>../CPIT455-class7-NooR.pdf</code></a></div>
+                                <div style="margin-top:6px"><a href="../CPIT455-class9-NooR.pdf"><code>../CPIT455-class9-NooR.pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Reuse pattern for all week folders and files</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="11-12" data-tags="distributed component-based engineering architecture design group phase week 11 12">
+                    <summary>
+                        <span>Week 11–12 — GROUP PHASE · Distributed & Component-Based Engineering</span>
+                        <span class="week-badge">Week 11–12</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Distributed Systems, Component-Based SE, Architecture Design</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-11-12-Distributed-Components/diagram.svg" alt="Component-based portfolio architecture diagram" />
+                                    <figcaption class="diagram-caption">A component-based view of the portfolio itself: home page, week blocks, shared conventions, and final project pack working together.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Described the portfolio as components: main UI, weekly evidence files, reflection files, project checklist, and assets.</div>
+                                <div style="margin-top:8px"><a href="Week-11-12-Distributed-Components/evidence-v2.md"><code>Week-11-12-Distributed-Components/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-11-12-Distributed-Components/reflection.md"><code>Week-11-12-Distributed-Components/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div class="muted">Source class files</div>
+                                <div style="margin-top:8px"><a href="../CPIT455-class8-NooR.pdf"><code>../CPIT455-class8-NooR.pdf</code></a></div>
+                                <div style="margin-top:6px"><a href="../CPIT455-class9-NooR.pdf"><code>../CPIT455-class9-NooR.pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Architecture separation between page, content, and assets</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="13-14" data-tags="systems of systems testing strategies coverage metrics v and v group phase week 13 14">
+                    <summary>
+                        <span>Week 13–14 — GROUP PHASE · Systems of Systems + Code Coverage</span>
+                        <span class="week-badge">Week 13–14</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Systems of Systems, Testing Strategies, Coverage Metrics</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-13-14-Systems-Testing-Coverage/diagram.svg" alt="Verification and coverage concept diagram" />
+                                    <figcaption class="diagram-caption">A review-cycle diagram for verification, validation, coverage, and fixing gaps before final submission.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (V2)</b>
+                                <div class="muted">Created a manual V&amp;V checklist to verify files, week coverage, link validity, and completeness before final submission.</div>
+                                <div style="margin-top:8px"><a href="Week-13-14-Systems-Testing-Coverage/evidence-v2.md"><code>Week-13-14-Systems-Testing-Coverage/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-13-14-Systems-Testing-Coverage/reflection.md"><code>Week-13-14-Systems-Testing-Coverage/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Proof / Link</b>
+                                <div style="margin-top:8px"><a href="../Class2 .pdf"><code>../Class2 .pdf</code></a></div>
+                                <div class="muted" style="margin-top:10px">Concept Link</div>
+                                <div style="margin-top:6px"><code>Coverage means all required weeks are represented</code></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details data-week="15-16" data-tags="final integration portfolio compilation presentation reflection final harvest week 15 16 show tell">
+                    <summary>
+                        <span>Week 15–16 — FINAL HARVEST · The Final Proof</span>
+                        <span class="week-badge">Week 15–16</span>
+                    </summary>
+                    <div class="ev-body">
+                        <div class="box"><b>Topics</b> Final Integration, Portfolio Compilation, Presentation</div>
+                        <div class="diagram">
+                            <b>Concept Diagram</b>
+                            <div class="diagram-gallery">
+                                <figure class="diagram-figure">
+                                    <img class="diagram-image" src="Week-15-16-Final-Harvest/diagram.svg" alt="Final harvest roadmap concept diagram" />
+                                    <figcaption class="diagram-caption">The closing roadmap: gather the best weekly proof, prepare the final pack, and finish with a clean submission and show &amp; tell.</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="ev-grid">
+                            <div class="box">
+                                <b>My Evidence (Final Reflection)</b>
+                                <div class="muted">Prepared the final harvest checklist and show-and-tell outline, then linked the strongest closing reflection for the portfolio.</div>
+                                <div style="margin-top:8px"><a href="Week-15-16-Final-Harvest/evidence-v2.md"><code>Week-15-16-Final-Harvest/evidence-v2.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Reflection</div>
+                                <div style="margin-top:6px"><a href="Week-15-16-Final-Harvest/reflection.md"><code>Week-15-16-Final-Harvest/reflection.md</code></a></div>
+                            </div>
+                            <div class="box">
+                                <b>Final Link</b>
+                                <div class="muted">Project checklist + closing week reference</div>
+                                <div style="margin-top:8px"><a href="Usaruna-Final-Project/README.md"><code>Usaruna-Final-Project/README.md</code></a></div>
+                                <div class="muted" style="margin-top:10px">Source class file</div>
+                                <div style="margin-top:6px"><a href="../Class2 .pdf"><code>../Class2 .pdf</code></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="links">
+        <div class="section-title">
+            <div>
+                <h2>Links</h2>
+                <p>Local and external links that are ready right now</p>
+            </div>
+        </div>
+
+        <div class="grid-3">
+            <a class="card item" href="Usaruna-Final-Project/README.md">
+                <div class="tag"><span class="dot"></span><span>🧩 Usaruna Final Project</span></div>
+                <p class="muted" style="margin:10px 0 0">Project summary, final checklist, diagrams, testing proof, and presentation notes</p>
+            </a>
+            <a class="card item" href="Week-13-14-Systems-Testing-Coverage/evidence-v2.md">
+                <div class="tag"><span class="dot"></span><span>🧪 Testing Coverage</span></div>
+                <p class="muted" style="margin:10px 0 0">Verification and coverage notes for the portfolio package</p>
+            </a>
+            <a class="card item" href="Week-15-16-Final-Harvest/reflection.md">
+                <div class="tag"><span class="dot"></span><span>🪞 Final Reflection</span></div>
+                <p class="muted" style="margin:10px 0 0">Closing reflection and strongest summary of the course journey</p>
+            </a>
+            <a class="card item" href="https://www.linkedin.com/in/ahmed-aljohani-97b1bb263/" target="_blank" rel="noreferrer">
+                <div class="tag"><span class="dot"></span><span>💼 LinkedIn</span></div>
+                <p class="muted" style="margin:10px 0 0">Professional profile for academic presence, networking, and portfolio sharing</p>
+            </a>
+            <a class="card item" href="https://github.com/Ahmed20032?tab=repositories" target="_blank" rel="noreferrer">
+                <div class="tag"><span class="dot"></span><span>💻 GitHub</span></div>
+                <p class="muted" style="margin:10px 0 0">Repository profile showing code work, course artifacts, and project history</p>
+            </a>
+            <a class="card item" href="Ahmed_Aljohani_CV.html">
+                <div class="tag"><span class="dot"></span><span>📄 CV</span></div>
+                <p class="muted" style="margin:10px 0 0">A clean CV page with summary, education, skills, tools, and project highlights</p>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="foot">
+            <div class="small">© 2026 • Ahmed Aljohani • CPIT455</div>
+            <div class="small">Portfolio root: <b style="color:var(--text)">CPIT-455-Portfolio</b></div>
+        </div>
+    </footer>
+</main>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-dialog">
+        <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image">×</button>
+        <img id="lightboxImage" src="" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+</div>
+
+<script>
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+
+    function setTheme(mode){
+        if(mode === 'light') root.setAttribute('data-theme', 'light');
+        else root.removeAttribute('data-theme');
+        localStorage.setItem('theme', mode);
+    }
+    const saved = localStorage.getItem('theme');
+    if(saved) setTheme(saved);
+
+    themeBtn.addEventListener('click', () => {
+        const isLight = root.getAttribute('data-theme') === 'light';
+        setTheme(isLight ? 'dark' : 'light');
+    });
+
+    const searchInput = document.getElementById('searchInput');
+    const weekSelect = document.getElementById('weekSelect');
+    const evidenceList = document.getElementById('evidenceList');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    function filterEvidence(){
+        const q = (searchInput.value || '').toLowerCase().trim();
+        const w = weekSelect.value;
+
+        [...evidenceList.querySelectorAll('details')].forEach(d => {
+            const week = d.getAttribute('data-week') || '';
+            const tags = (d.getAttribute('data-tags') || '').toLowerCase();
+            const text = (d.innerText || '').toLowerCase();
+
+            const okWeek = (w === 'all') || (week === w);
+            const okQuery = (!q) || text.includes(q) || tags.includes(q);
+
+            d.style.display = (okWeek && okQuery) ? '' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterEvidence);
+    weekSelect.addEventListener('change', filterEvidence);
+    filterEvidence();
+
+    function openLightbox(image){
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt || 'Expanded image';
+        lightboxCaption.textContent = image.alt || '';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-zoomable]').forEach((image) => {
+        image.addEventListener('click', () => openLightbox(image));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => {
+        if(event.target === lightbox){
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if(event.key === 'Escape' && lightbox.classList.contains('open')){
+            closeLightbox();
+        }
+    });
+</script>
+</body>
+</html>
